@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="watch.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Sen:wght@400;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Movie Design</title>
+    <style>
+        .video-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background-color: #0f0f0f;
+            padding: 12px 16px;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 40px;
+        }
+
+        .video-header .back-btn {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+        .video-header .back-btn:hover {
+            color: #ccc;
+        }
+
+        .video-title {
+            flex: 1;
+        }
+
+        video {
+            margin-top: 35px;
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="navbar-container">
+            <div class="logo-container">
+                <h1 class="logo">SonaFilm</h1>
+            </div>
+            <div class="menu-container">
+                <ul class="menu-list">
+                    <li class="menu-list-item-search">
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Tìm kiếm phim, diễn viên" id="menuSearchInput">
+                        </div>
+                    </li>
+                    <li class="menu-list-item active">Home</li>
+                    <li class="menu-list-item">Movies</li>
+                    <li class="menu-list-item">Series</li>
+                    <li class="menu-list-item">Popular</li>
+                    <li class="menu-list-item">Trends</li>
+                </ul>
+            </div>
+            <div class="profile-container">
+                <img class="profile-picture" src="img/profile.jpg" alt="">
+                <div class="profile-text-container">
+                    <span class="profile-text">Profile</span>
+                    <i class="fas fa-caret-down"></i>
+                </div>
+                <div class="toggle">
+                    <i class="fas fa-moon toggle-icon"></i>
+                    <i class="fas fa-sun toggle-icon"></i>
+                    <div class="toggle-ball"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sidebar">
+        <i class="left-menu-icon fas fa-home"></i>
+        <i class="left-menu-icon fas fa-users"></i>
+        <i class="left-menu-icon fas fa-bookmark"></i>
+        <i class="left-menu-icon fas fa-tv"></i>
+        <i class="left-menu-icon fas fa-hourglass-start"></i>
+        <i class="left-menu-icon fas fa-shopping-cart"></i>
+    </div>
+
+    <div class="container">
+        <div class="content-container">
+            <!-- Thanh tiêu đề trên video -->
+            <div class="video-header">
+                <a href="home.html" class="back-btn">
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+                <span class="video-title">Xem phim Avengers: Cuộc Chiến Vô Cực</span>
+            </div>
+
+            <div class="featured-content" style="background-color: black;">
+                <video id="myVideo" preload="auto" controls style="max-width: 100%;">
+                    <source src="img/yt1s.com--Marvel-Studios-Avengers-Infinity-War-Official-Trailer_1080p.mp4"
+                        type="video/mp4">
+                </video>
+                <div class="movie-info">
+                    <img class="movie-poster" src="/img/poster/2.jpg" alt="Poster phim">
+
+                    <div class="movie-details">
+                        <h2 class="movie-title">Avengers: Cuộc Chiến Vô Cực</h2>
+                        <p class="movie-subtitle">Avengers: Infinity War</p>
+
+                        <div class="movie-meta">
+                            <span class="movie-rating">T13</span>
+                            <span class="movie-year">2018</span>
+                            <span class="movie-duration">2h 29m</span>
+                        </div>
+
+                        <div class="movie-tags">
+                            <span>Hành Động</span>
+                            <span>Phiêu Lưu</span>
+                            <span>Khoa Học Viễn Tưởng</span>
+                            <span>Siêu Anh Hùng</span>
+                            <span>Chiến Tranh</span>
+                            <span>Kỳ Ảo</span>
+                        </div>
+
+                        <p class="movie-description">
+                            Khi gã ác nhân Thanos bắt đầu kế hoạch thu thập 6 Viên Đá Vô Cực để xóa sổ một nửa sự sống
+                            trong vũ trụ,
+                            nhóm Avengers cùng các đồng minh phải hợp lực chống lại mối đe dọa lớn nhất mà họ từng đối
+                            mặt.
+                            Số phận của toàn bộ vũ trụ nằm trong tay họ.
+                        </p>
+
+                        <a href="#" class="movie-link">Thông tin phim &gt;</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <img src="img/Logo/logoSonaFilm.jpg" alt="SonaFilm">
+                    <div>
+                        <h2>SonaFilm</h2>
+                        <p>Phim hay cả rổ</p>
+                    </div>
+                </div>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-telegram-plane"></i></a>
+                    <a href="#"><i class="fab fa-discord"></i></a>
+                    <a href="#"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-menu">
+                <a href="#">Hỏi-Đáp</a>
+                <a href="#">Chính sách bảo mật</a>
+                <a href="#">Điều khoản sử dụng</a>
+                <a href="#">Giới thiệu</a>
+                <a href="#">Liên hệ</a>
+            </div>
+
+            <div class="footer-submenu">
+                <a href="#">Dongphim</a>
+                <a href="#">Ghienphim</a>
+                <a href="#">Motphim</a>
+                <a href="#">Subnhanh</a>
+            </div>
+
+            <div class="footer-desc">
+                <p>
+                    SonaFilm – Phim hay cả rổ – Trang xem phim online chất lượng cao miễn phí Vietsub, thuyết minh, lồng
+                    tiếng full HD.
+                    Kho phim mới khổng lồ, phim chiếu rạp, phim bộ, phim lẻ từ nhiều quốc gia như Việt Nam, Hàn Quốc,
+                    Trung Quốc,
+                    Thái Lan, Nhật Bản, Âu Mỹ... đa dạng thể loại. Khám phá nền tảng phim trực tuyến hay nhất 2024 chất
+                    lượng 4K!
+                </p>
+                <p>© 2024 SonaFilm</p>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+
+</html>

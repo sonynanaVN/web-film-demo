@@ -8,9 +8,8 @@ arrows.forEach((arrow, i) => {
     const ratio = Math.floor(window.innerWidth / 270);
     clickCounter++;
     if (itemNumber - (4 + clickCounter) + (4 - ratio) >= 0) {
-      movieLists[i].style.transform = `translateX(${
-        movieLists[i].computedStyleMap().get("transform")[0].x.value - 300
-      }px)`;
+      movieLists[i].style.transform = `translateX(${movieLists[i].computedStyleMap().get("transform")[0].x.value - 300
+        }px)`;
     } else {
       movieLists[i].style.transform = "translateX(0)";
       clickCounter = 0;
@@ -34,11 +33,11 @@ ball.addEventListener("click", () => {
   ball.classList.toggle("active");
 });
 //video autoplay
-  document.addEventListener('click', function () {
-    const video = document.getElementById('myVideo');
-    video.volume = 1.0; // đảm bảo có âm thanh
-    video.play();
-  }, { once: true }); // chỉ chạy 1 lần sau click đầu tiên
+document.addEventListener('click', function () {
+  const video = document.getElementById('myVideo');
+  video.volume = 1.0; // đảm bảo có âm thanh
+  video.play();
+}, { once: true }); // chỉ chạy 1 lần sau click đầu tiên
 // Mở popup tìm kiếm
 document.querySelector(".fa-search").addEventListener("click", () => {
   document.querySelector(".search-popup").classList.toggle("active");
