@@ -32,10 +32,7 @@
                     <li class="menu-list-item">Series</li>
                     <li class="menu-list-item">Popular</li>
                     <li class="menu-list-item">Trends</li>
-
                 </ul>
-
-
             </div>
             <div class="profile-container">
                 <img class="profile-picture" src="img/profile.jpg" alt="">
@@ -51,49 +48,49 @@
             </div>
         </div>
     </div>
+
     <div class="sidebar">
         <!-- <i class="left-menu-icon fas fa-search"></i> -->
-        <i class="left-menu-icon fas fa-home"></i>
-        <i class="left-menu-icon fas fa-users"></i>
-        <i class="left-menu-icon fas fa-bookmark"></i>
-        <i class="left-menu-icon fas fa-tv"></i>
-        <i class="left-menu-icon fas fa-hourglass-start"></i>
-        <i class="left-menu-icon fas fa-shopping-cart"></i>
+        <a href="home.html" title="Trang chủ"><i class="left-menu-icon fas fa-home"></i></a>
+        <a href="Comunity.html" title="Cộng đồng người dùng-đánh giá film"><i class="left-menu-icon fas fa-users"></i></a>
+        <a href="vip-payment.html" title="Thanh Toán"><i class="left-menu-icon fas fa-bookmark"></i></a>
+        <a href="show-time.html" title="Xem Rạp"><i class="left-menu-icon fas fa-tv"></i></a>
+        <a href="ranking.html" title="Bảng xếp hạng"><i class="left-menu-icon fas fa-hourglass-start"></i></a>
+        <a href="cart.html" title="Giỏ hàng"><i class="left-menu-icon fas fa-shopping-cart"></i></a>
     </div>
     <div class="container">
         <div class="content-container">
             <div class="featured-content"
                 style="background: linear-gradient(to bottom, rgba(0,0,0,0), #151515), url('img/f-1.jpg');">
                 <video id="myVideo" preload="auto" loop>
-                    <source id="videoSource"
-                        src="img/yt1s.com--Marvel-Studios-Avengers-Infinity-War-Official-Trailer_1080p.mp4"
+                    <source id="videoSource" src="img/Joker Final Trailer (2019) - Movieclips Trailers.mp4"
                         type="video/mp4">
                 </video>
 
                 <div class="movie-overlay">
-                    <h2 id="movieTitle">AVENGERS V</h2>
+                    <h2 id="movieTitle">JOKER</h2>
 
                     <div class="tags">
-                        <span class="tag imdb" id="movieIMDB">IMDb 6.2</span>
+                        <span class="tag imdb" id="movieIMDB">IMDb 8.4</span>
                         <span class="tag quality" id="movieQuality">4K</span>
-                        <span class="tag age" id="movieAge">T16</span>
-                        <span class="tag year" id="movieYear">2025</span>
-                        <span class="tag duration" id="movieDuration">2h 10m</span>
+                        <span class="tag age" id="movieAge">T18</span>
+                        <span class="tag year" id="movieYear">2019</span>
+                        <span class="tag duration" id="movieDuration">2h 2m</span>
                     </div>
 
                     <div class="genres" id="movieGenres">
-                        <span>Chiếu Rạp</span>
-                        <span>Gay Cấn</span>
-                        <span>Khoa Học</span>
-                        <span>Bí Ẩn</span>
-                        <span>Phiêu Lưu</span>
-                        <span>Giả Tưởng</span>
+                        <span>Tâm Lý</span>
+                        <span>Kịch Tính</span>
+                        <span>Tội Phạm</span>
+                        <span>Chính Kịch</span>
                     </div>
 
                     <p class="description" id="movieDesc">
-                        AVENGERS V là phần tiếp theo của loạt phim siêu anh hùng đình đám, nơi các anh hùng từ khắp vũ
-                        trụ Marvel ....
+                        Joker (2019) kể về Arthur Fleck, một diễn viên hài thất bại sống ở Gotham,
+                        dần bị xã hội ruồng bỏ và trượt dài vào bóng tối, trở thành một trong những kẻ phản diện khét
+                        tiếng nhất lịch sử.
                     </p>
+
 
                     <div class="movie-actions">
                         <button class="play" id="moviePlay" onclick="window.location.href='watch-1.html'">
@@ -105,259 +102,392 @@
                 </div>
 
                 <!-- Thanh thumbnail -->
+                <!-- Thanh thumbnail -->
                 <div class="thumbnail-list">
-                    <img src="thumb1.jpg">
-                    <img src="thumb2.jpg">
+                    <img src="/img/poster/kingkong.jpg" data-src="/img/Godzilla vs Kong  Official Trailer.mp4"
+                        data-title="GODZILLA VS KONG" data-imdb="IMDb 6.3" data-quality="4K" data-age="T13"
+                        data-year="2021" data-duration="1h 53m" data-genres="Hành Động, Khoa Học, Phiêu Lưu"
+                        data-desc="Hai quái vật huyền thoại Godzilla và Kong đối đầu trong trận chiến quyết định, khi nhân loại tìm cách sinh tồn.">
+
+                    <img src="/img/poster/johnwick.jpg"
+                        data-src="/img/John Wick- Chapter 4 (2023 Movie) Official Trailer  Keanu Reeves, Donnie Yen, Bill Skarsgård.mp4"
+                        data-title="JOHN WICK: CHAPTER 4" data-imdb="IMDb 7.8" data-quality="4K" data-age="T18"
+                        data-year="2023" data-duration="2h 49m" data-genres="Hành Động, Tội Phạm, Giật Gân"
+                        data-desc="John Wick tiếp tục cuộc chiến sinh tồn khi phải đối mặt với kẻ thù mới và mạng lưới sát thủ toàn cầu.">
+
+                    <img src="/img/poster/anabel.jpg" data-src="/img/Annabelle - Official Main Trailer [HD].mp4"
+                        data-title="ANNABELLE" data-imdb="IMDb 5.4" data-quality="4K" data-age="T16" data-year="2014"
+                        data-duration="1h 39m" data-genres="Kinh Dị, Giật Gân"
+                        data-desc="Một con búp bê ma ám gieo rắc nỗi sợ hãi cho một gia đình trẻ.">
+
+                    <img src="/img/poster/fast X.jpg" data-src="/img/FAST X - Official Trailer.mp4" data-title="FAST X"
+                        data-imdb="IMDb 5.9" data-quality="4K" data-age="T13" data-year="2023" data-duration="2h 21m"
+                        data-genres="Hành Động, Phiêu Lưu"
+                        data-desc="Dom Toretto và gia đình đối mặt với kẻ thù nguy hiểm nhất từ trước đến nay.">
+
+                    <img src="/img/poster/IT.jpg" data-src="/img/IT - Official Teaser Trailer.mp4" data-title="IT"
+                        data-imdb="IMDb 7.3" data-quality="4K" data-age="T18" data-year="2017" data-duration="2h 15m"
+                        data-genres="Kinh Dị, Giật Gân"
+                        data-desc="Một nhóm trẻ em ở thị trấn Derry phải đối mặt với nỗi sợ hãi lớn nhất của mình khi bị ám ảnh và săn đuổi bởi thực thể tà ác Pennywise, một gã hề sát nhân ăn thịt người.">
+
+                    <img src="/img/poster/joker2019.jpg" data-src="img/Joker Final Trailer (2019) - Movieclips Trailers.mp4"
+                        data-title="JOKER" data-imdb="IMDb 8.4" data-quality="4K" data-age="T18" data-year="2019"
+                        data-duration="2h 2m" data-genres="Tâm Lý, Kịch Tính, Tội Phạm"
+                        data-desc="Arthur Fleck, một diễn viên hài thất bại, dần bị xã hội ruồng bỏ và trở thành tên tội phạm khét tiếng Joker.">
+                </div>
+
+
+
+                <!-- Sản phẩm tiếp theo -->
+            </div>
+            <div class="movie-list-container">
+                <h1 id="title-important" class="movie-list-title">Phim US-UK gay cấn</h1>
+                <div class="movie-list-wrapper">
+                    <div class="movie-list">
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/1.jpg" alt="">
+                            <div class="movie-gradient"></div>
+
+                            <span class="movie-list-item-title">Her</span>
+                            <p class="movie-list-item-desc">
+                                Phim tình cảm khoa học viễn tưởng về một người đàn ông cô đơn nảy sinh tình yêu với trí tuệ nhân tạo.
+                            </p>
+                            <button class="movie-list-item-button">Watch</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/2.jpg" alt="">
+                            <div class="movie-gradient"></div>
+
+                            <span class="movie-list-item-title">Star Wars: The Rise of Skywalker</span>
+                            <p class="movie-list-item-desc">
+                                Cuộc chiến cuối cùng giữa phe Kháng chiến và phe Đế chế, Rey đối đầu Kylo Ren để định đoạt số phận thiên hà..
+                            </p>
+                            <button class="movie-list-item-button">Watch</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/3.jpg" alt="">
+                            <div class="movie-gradient"></div>
+
+                            <span class="movie-list-item-title">Storm</span>
+                            <p class="movie-list-item-desc">
+                                Câu chuyện phiêu lưu lịch sử về một cậu bé bị cuốn vào âm mưu nguy hiểm liên quan đến tự do và công lý
+                            </p>
+                            <button class="movie-list-item-button">Watch</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/4.jpg" alt="">
+                            <div class="movie-gradient"></div>
+
+                            <span class="movie-list-item-title">1917</span>
+                            <p class="movie-list-item-desc">
+                                Hai người lính trẻ trong Thế chiến I phải thực hiện nhiệm vụ gần như bất khả thi để cứu hàng ngàn sinh mạng.
+                            </p>
+                            <button class="movie-list-item-button">Watch</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/5.jpg" alt="">
+                            <div class="movie-gradient"></div>
+
+                            <span class="movie-list-item-title">Her</span>
+                            <p class="movie-list-item-desc">
+                                Phim tình cảm khoa học viễn tưởng về một người đàn ông cô đơn nảy sinh tình yêu với trí tuệ nhân tạo.
+                            </p>
+                            <button class="movie-list-item-button">Watch</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/6.jpg" alt="">
+                            <div class="movie-gradient"></div>
+
+                            <span class="movie-list-item-title">Avengers: Endgame</span>
+                            <p class="movie-list-item-desc">
+                                Sau khi Thanos quét sạch một nửa sinh mạng vũ trụ, các Avengers còn lại hợp sức thực hiện kế hoạch du hành thời gian để thu thập các Viên đá Vô cực và đảo ngược thảm kịch.
+                            </p>
+                            <button class="movie-list-item-button">Watch</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/7.jpg" alt="">
+                            <div class="movie-gradient"></div>
+
+                            <span class="movie-list-item-title">Avengers: Endgame</span>
+                            <p class="movie-list-item-desc">
+                                Sau khi Thanos quét sạch một nửa sinh mạng vũ trụ, các Avengers còn lại hợp sức thực hiện kế hoạch du hành thời gian để thu thập các Viên đá Vô cực và đảo ngược thảm kịch.
+                            </p>
+                            <button class="movie-list-item-button">Watch</button>
+                        </div>
+                        <!-- thanh trượt -->
+                    </div>
+                    <i class="fas fa-chevron-right arrow"></i>
+                </div>
+            </div>
+            <div class="featured-content"
+                style="background: linear-gradient(to bottom, rgba(0,0,0,0), #151515), url('img/f-2.jpg');">
+                <img class="featured-title" src="img/f-t-2.png" alt="">
+                <p class="featured-desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto illo dolor
+                    deserunt nam assumenda ipsa eligendi dolore, ipsum id fugiat quo enim impedit, laboriosam omnis
+                    minima voluptatibus incidunt. Accusamus, provident.</p>
+                <button class="featured-button">WATCH</button>
+            </div>
+            <div class="movie-list-container">
+                <h1 id="title-important" class="movie-list-title">Phim Hàn Oppa</h1>
+                <div class="movie-list-wrapper">
+                    <div class="movie-list">
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img"
+                                src="img/Rescoure Film/trailer phim/Chiếc bật lửa và váy công chúa/chiec-bat-lua-va-vay-cong-chua-fpt-play-1714122787402_Landscape.jpg"
+                                alt="">
+                            <div class="movie-gradient"></div>
+                            <span class="movie-list-item-title">Chiếc bật lửa và váy công chúa</span>
+                            <p class="movie-list-item-desc">
+                                Chuyện tình thanh xuân giữa chàng trai lạnh lùng và cô gái mạnh mẽ, bắt đầu từ một lời
+                                hứa tuổi trẻ.
+                            </p>
+                            <button class="movie-list-item-button">Watch</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img"
+                                src="img/Rescoure Film/trailer phim/Hôn lễ của em/hon-le-cua-em-fpt-play-1709803394498_Landscape.jpg"
+                                alt="">
+                            <div class="movie-gradient"></div>
+                            <span class="movie-list-item-title">Hôn lễ của em</span>
+                            <p class="movie-list-item-desc">
+                                Một cuộc gặp gỡ định mệnh khiến hai con người xa lạ bước vào câu chuyện tình đầy cảm
+                                xúc.
+                            </p>
+                            <button class="movie-list-item-button">Watch</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img"
+                                src="img/Rescoure Film/trailer phim/Khi cuộc đời cho bạn quả quýt/OIP (1).webp" alt="">
+                            <div class="movie-gradient"></div>
+                            <span class="movie-list-item-title">Khi cuộc đời cho bạn quả quýt</span>
+                            <p class="movie-list-item-desc">
+                                Đôi khi, thử thách trong đời lại chính là cơ hội để tìm thấy niềm vui và ý nghĩa mới.
+                            </p>
+                            <button class="movie-list-item-button">Watch</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img"
+                                src="img/Rescoure Film/trailer phim/Tôi ở đỉnh cao đợi cậu/49992253115093874371460706056282736536591572n-17161241.jpg"
+                                alt="">
+                            <div class="movie-gradient"></div>
+                            <span class="movie-list-item-title">Tôi ở đỉnh cao đợi cậu</span>
+                            <p class="movie-list-item-desc">
+                                Một câu chuyện về sự kiên trì và niềm tin, khi tình yêu vượt qua mọi khoảng cách và thời
+                                gian.
+                            </p>
+                            <button class="movie-list-item-button">Watch</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img"
+                                src="img/Rescoure Film/trailer phim/ONE_ High School Heroes/ONE-High-School-Heroes.jpg"
+                                alt="">
+                            <div class="movie-gradient"></div>
+                            <span class="movie-list-item-title">ONE: High School Heroes</span>
+                            <p class="movie-list-item-desc">
+                                Những học sinh bình thường bỗng trở thành anh hùng, bảo vệ trường trước thế lực bí ẩn.
+                            </p>
+                            <button class="movie-list-item-button">Watch</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img"
+                                src="img/Rescoure Film/trailer phim/Big Mouth/Untitled-design-2024-04-10T232219.549.jpg"
+                                alt="">
+                            <div class="movie-gradient"></div>
+                            <span class="movie-list-item-title">Big Mouth</span>
+                            <p class="movie-list-item-desc">
+                                Một luật sư bình thường bất ngờ bị cuốn vào âm mưu nguy hiểm và trở thành kẻ bị săn
+                                đuổi.
+                            </p>
+                            <button class="movie-list-item-button">Watch</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img"
+                                src="img/Rescoure Film/trailer phim/Khúc nhạc thăng trầm/maxresdefault.jpg" alt="">
+                            <div class="movie-gradient"></div>
+                            <span class="movie-list-item-title">Khúc nhạc thăng trầm</span>
+                            <p class="movie-list-item-desc">
+                                Một bản nhạc nối liền hai số phận, đưa họ qua những thăng trầm của cuộc sống và tình
+                                yêu.
+                            </p>
+                            <button class="movie-list-item-button">Watch</button>
+                        </div>
+
+                        <!-- thanh trượt -->
+                    </div>
+                    <i class="fas fa-chevron-right arrow"></i>
                 </div>
             </div>
 
+            <div class="movie-list-container">
+                <h1 id="title-important" class="movie-list-title">Anime Hè Tháng 8</h1>
+                <div class="movie-list-wrapper">
+                    <div class="movie-list">
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/Anime/Demon Slayer.webp" alt="">
+                            <div class="movie-gradient"></div>
+                            <span class="movie-list-item-title">Demon Slayer</span>
+                            <p class="movie-list-item-desc">
+                                Câu chuyện về cậu bé Tanjiro và hành trình tiêu diệt quỷ để cứu em gái khỏi lời nguyền
+                                tàn khốc.
+                            </p>
+                            <button class="movie-list-item-button">Watch</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/Anime/Jujutsu-Kaisen-2.jpg" alt="">
+                            <div class="movie-gradient"></div>
+                            <span class="movie-list-item-title">Jujutsu Kaisen 2</span>
+                            <p class="movie-list-item-desc">
+                                Theo chân Gojo Satoru thời trẻ cùng những bí mật đen tối của giới chú thuật đầy nguy
+                                hiểm.
+                            </p>
+                            <button class="movie-list-item-button">Watch</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/Anime/nyaight-of-the-living-cat-key-visual-1.avif"
+                                alt="">
+                            <div class="movie-gradient"></div>
+                            <span class="movie-list-item-title">Night of the Living Cat</span>
+                            <p class="movie-list-item-desc">
+                                Khi mèo biến thành sinh vật thống trị, con người phải tìm cách sống sót trước sự đáng
+                                yêu chết người.
+                            </p>
+                            <button class="movie-list-item-button">Watch</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/Anime/Spy X Family.webp" alt="">
+                            <div class="movie-gradient"></div>
+                            <span class="movie-list-item-title">Spy X Family</span>
+                            <p class="movie-list-item-desc">
+                                Một điệp viên, một sát thủ và một cô bé đọc được suy nghĩ cùng tạo nên gia đình giả… đầy
+                                rắc rối.
+                            </p>
+                            <button class="movie-list-item-button">Watch</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/Anime/uzaki.webp" alt="">
+                            <div class="movie-gradient"></div>
+                            <span class="movie-list-item-title">Uzaki-chan Wants to Hang Out</span>
+                            <p class="movie-list-item-desc">
+                                Uzaki luôn tìm cách kéo đàn anh nhút nhát ra khỏi vỏ bọc với những trò tinh quái không
+                                hồi kết.
+                            </p>
+                            <button class="movie-list-item-button">Watch</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img"
+                                src="img/Anime/wallpapersden.com_chainsaw-man-4k-trinity_2048x1114.jpg" alt="">
+                            <div class="movie-gradient"></div>
+                            <span class="movie-list-item-title">Chainsaw Man</span>
+                            <p class="movie-list-item-desc">
+                                Denji – chàng trai cùng người bạn Pochita hóa thành thợ săn quỷ với lưỡi cưa đầy máu
+                                lửa.
+                            </p>
+                            <button class="movie-list-item-button">Watch</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/Anime/Hero Academy.webp" alt="">
+                            <div class="movie-gradient"></div>
+                            <span class="movie-list-item-title">My Hero Academia</span>
+                            <p class="movie-list-item-desc">
+                                Một thế giới nơi ai cũng có siêu năng lực, và cậu bé Izuku quyết tâm trở thành anh hùng
+                                số một.
+                            </p>
+                            <button class="movie-list-item-button">Watch</button>
+                        </div>
 
-            <!-- Sản phẩm tiếp theo -->
-        </div>
-        <div class="movie-list-container">
-            <h1 id="title-important" class="movie-list-title">NEW RELEASES</h1>
-            <div class="movie-list-wrapper">
-                <div class="movie-list">
-                    <div class="movie-list-item">
-                        <img class="movie-list-item-img"
-                            src="img/Rescoure Film/trailer phim/Big Mouth/Untitled-design-2024-04-10T232219.549.jpg"
-                            alt="">
-                        <div class="movie-gradient"></div>
+                        <!-- thanh trượt -->
+                    </div>
+                    <i class="fas fa-chevron-right arrow"></i>
+                </div>
+            </div>
+            <div class="movie-list-container">
+                <h1 id="title-important" class="movie-list-title">Phim Âu Mỹ</h1>
+                <div class="movie-list-wrapper">
+                    <div class="movie-list">
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/8.jpg" alt="">
+                            <div class="movie-gradient"></div>
 
-                        <span class="movie-list-item-title">Her</span>
-                        <p class="movie-list-item-desc">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. At hic fugit similique accusantium.
-                        </p>
-                        <button class="movie-list-item-button">Watch</button>
-                    </div>
+                            <span class="movie-list-item-title">Her</span>
+                            <p class="movie-list-item-desc">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. At hic fugit similique
+                                accusantium.
+                            </p>
+                            <button class="movie-list-item-button">Watch</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/poster/fast X.jpg" alt="">
+                            <div class="movie-gradient"></div>
 
-                    <div class="movie-list-item">
-                        <img class="movie-list-item-img"
-                            src="img/Rescoure Film/trailer phim/Chiếc bật lửa và váy công chúa/chiec-bat-lua-va-vay-cong-chua-fpt-play-1714122787402_Landscape.jpg" alt="">
-                        <span class="movie-list-item-title">Star Wars</span>
-                        <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-                            hic fugit similique accusantium.</p>
-                        <button class="movie-list-item-button">Watch</button>
+                            <span class="movie-list-item-title">Her</span>
+                            <p class="movie-list-item-desc">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. At hic fugit similique
+                                accusantium.
+                            </p>
+                            <button class="movie-list-item-button">Watch</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/9.jpg" alt="">
+                            <div class="movie-gradient"></div>
+
+                            <span class="movie-list-item-title">Her</span>
+                            <p class="movie-list-item-desc">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. At hic fugit similique
+                                accusantium.
+                            </p>
+                            <button class="movie-list-item-button">Watch</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/10.jpg" alt="">
+                            <div class="movie-gradient"></div>
+
+                            <span class="movie-list-item-title">Her</span>
+                            <p class="movie-list-item-desc">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. At hic fugit similique
+                                accusantium.
+                            </p>
+                            <button class="movie-list-item-button">Watch</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/11.jpg" alt="">
+                            <div class="movie-gradient"></div>
+
+                            <span class="movie-list-item-title">Her</span>
+                            <p class="movie-list-item-desc">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. At hic fugit similique
+                                accusantium.
+                            </p>
+                            <button class="movie-list-item-button">Watch</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/12.jpg" alt="">
+                            <div class="movie-gradient"></div>
+
+                            <span class="movie-list-item-title">Her</span>
+                            <p class="movie-list-item-desc">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. At hic fugit similique
+                                accusantium.
+                            </p>
+                            <button class="movie-list-item-button">Watch</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/13.jpg" alt="">
+                            <div class="movie-gradient"></div>
+
+                            <span class="movie-list-item-title">Her</span>
+                            <p class="movie-list-item-desc">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. At hic fugit similique
+                                accusantium.
+                            </p>
+                            <button class="movie-list-item-button">Watch</button>
+                        </div>
+                        <!-- thanh trượt -->
                     </div>
-                    <div class="movie-list-item">
-                        <img class="movie-list-item-img" src="img/3.jpg" alt="">
-                        <span class="movie-list-item-title">Storm</span>
-                        <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-                            hic fugit similique accusantium.</p>
-                        <button class="movie-list-item-button">Watch</button>
-                    </div>
-                    <div class="movie-list-item">
-                        <img class="movie-list-item-img" src="img/4.jpg" alt="">
-                        <span class="movie-list-item-title">1917</span>
-                        <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-                            hic fugit similique accusantium.</p>
-                        <button class="movie-list-item-button">Watch</button>
-                    </div>
-                    <div class="movie-list-item">
-                        <img class="movie-list-item-img" src="img/5.jpg" alt="">
-                        <span class="movie-list-item-title">Avengers</span>
-                        <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-                            hic fugit similique accusantium.</p>
-                        <button class="movie-list-item-button">Watch</button>
-                    </div>
-                    <div class="movie-list-item">
-                        <img class="movie-list-item-img" src="img/6.jpg" alt="">
-                        <span class="movie-list-item-title">Her</span>
-                        <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-                            hic fugit similique accusantium.</p>
-                        <button class="movie-list-item-button">Watch</button>
-                    </div>
-                    <div class="movie-list-item">
-                        <img class="movie-list-item-img" src="img/7.jpg" alt="">
-                        <span class="movie-list-item-title">Her</span>
-                        <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-                            hic fugit similique accusantium.</p>
-                        <button class="movie-list-item-button">Watch</button>
-                    </div>
+                    <i class="fas fa-chevron-right arrow"></i>
                 </div>
-                <i class="fas fa-chevron-right arrow"></i>
             </div>
+
         </div>
-        <div class="movie-list-container">
-            <h1 class="movie-list-title">NEW RELEASES</h1>
-            <div class="movie-list-wrapper">
-                <div class="movie-list">
-                    <div class="movie-list-item">
-                        <img class="movie-list-item-img" src="img/8.jpg" alt="">
-                        <span class="movie-list-item-title">Her</span>
-                        <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-                            hic fugit similique accusantium.</p>
-                        <button class="movie-list-item-button">Watch</button>
-                    </div>
-                    <div class="movie-list-item">
-                        <img class="movie-list-item-img" src="img/9.jpg" alt="">
-                        <span class="movie-list-item-title">Her</span>
-                        <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-                            hic fugit similique accusantium.</p>
-                        <button class="movie-list-item-button">Watch</button>
-                    </div>
-                    <div class="movie-list-item">
-                        <img class="movie-list-item-img" src="img/10.jpg" alt="">
-                        <span class="movie-list-item-title">Her</span>
-                        <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-                            hic fugit similique accusantium.</p>
-                        <button class="movie-list-item-button">Watch</button>
-                    </div>
-                    <div class="movie-list-item">
-                        <img class="movie-list-item-img" src="img/11.jpg" alt="">
-                        <span class="movie-list-item-title">Her</span>
-                        <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-                            hic fugit similique accusantium.</p>
-                        <button class="movie-list-item-button">Watch</button>
-                    </div>
-                    <div class="movie-list-item">
-                        <img class="movie-list-item-img" src="img/12.jpg" alt="">
-                        <span class="movie-list-item-title">Her</span>
-                        <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-                            hic fugit similique accusantium.</p>
-                        <button class="movie-list-item-button">Watch</button>
-                    </div>
-                    <div class="movie-list-item">
-                        <img class="movie-list-item-img" src="img/1.jpg" alt="">
-                        <span class="movie-list-item-title">Her</span>
-                        <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-                            hic fugit similique accusantium.</p>
-                        <button class="movie-list-item-button">Watch</button>
-                    </div>
-                    <div class="movie-list-item">
-                        <img class="movie-list-item-img" src="img/1.jpg" alt="">
-                        <span class="movie-list-item-title">Her</span>
-                        <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-                            hic fugit similique accusantium.</p>
-                        <button class="movie-list-item-button">Watch</button>
-                    </div>
-                </div>
-                <i class="fas fa-chevron-right arrow"></i>
-            </div>
-        </div>
-        <div class="featured-content"
-            style="background: linear-gradient(to bottom, rgba(0,0,0,0), #151515), url('img/f-2.jpg');">
-            <img class="featured-title" src="img/f-t-2.png" alt="">
-            <p class="featured-desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto illo dolor
-                deserunt nam assumenda ipsa eligendi dolore, ipsum id fugiat quo enim impedit, laboriosam omnis
-                minima voluptatibus incidunt. Accusamus, provident.</p>
-            <button class="featured-button">WATCH</button>
-        </div>
-        <div class="movie-list-container">
-            <h1 class="movie-list-title">NEW RELEASES</h1>
-            <div class="movie-list-wrapper">
-                <div class="movie-list">
-                    <div class="movie-list-item">
-                        <img class="movie-list-item-img" src="img/1.jpg" alt="">
-                        <span class="movie-list-item-title">Her</span>
-                        <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-                            hic fugit similique accusantium.</p>
-                        <button class="movie-list-item-button">Watch</button>
-                    </div>
-                    <div class="movie-list-item">
-                        <img class="movie-list-item-img" src="img/2.jpg" alt="">
-                        <span class="movie-list-item-title">Her</span>
-                        <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-                            hic fugit similique accusantium.</p>
-                        <button class="movie-list-item-button">Watch</button>
-                    </div>
-                    <div class="movie-list-item">
-                        <img class="movie-list-item-img" src="img/15.jpg" alt="">
-                        <span class="movie-list-item-title">Her</span>
-                        <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-                            hic fugit similique accusantium.</p>
-                        <button class="movie-list-item-button">Watch</button>
-                    </div>
-                    <div class="movie-list-item">
-                        <img class="movie-list-item-img" src="img/3.jpg" alt="">
-                        <span class="movie-list-item-title">Her</span>
-                        <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-                            hic fugit similique accusantium.</p>
-                        <button class="movie-list-item-button">Watch</button>
-                    </div>
-                    <div class="movie-list-item">
-                        <img class="movie-list-item-img" src="img/4.jpg" alt="">
-                        <span class="movie-list-item-title">Her</span>
-                        <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-                            hic fugit similique accusantium.</p>
-                        <button class="movie-list-item-button">Watch</button>
-                    </div>
-                    <div class="movie-list-item">
-                        <img class="movie-list-item-img" src="img/5.jpg" alt="">
-                        <span class="movie-list-item-title">Her</span>
-                        <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-                            hic fugit similique accusantium.</p>
-                        <button class="movie-list-item-button">Watch</button>
-                    </div>
-                    <div class="movie-list-item">
-                        <img class="movie-list-item-img" src="img/1.jpg" alt="">
-                        <span class="movie-list-item-title">Her</span>
-                        <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-                            hic fugit similique accusantium.</p>
-                        <button class="movie-list-item-button">Watch</button>
-                    </div>
-                </div>
-                <i class="fas fa-chevron-right arrow"></i>
-            </div>
-        </div>
-        <div class="movie-list-container">
-            <h1 class="movie-list-title">NEW RELEASES</h1>
-            <div class="movie-list-wrapper">
-                <div class="movie-list">
-                    <div class="movie-list-item">
-                        <img class="movie-list-item-img" src="img/17.jpg" alt="">
-                        <span class="movie-list-item-title">Her</span>
-                        <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-                            hic fugit similique accusantium.</p>
-                        <button class="movie-list-item-button">Watch</button>
-                    </div>
-                    <div class="movie-list-item">
-                        <img class="movie-list-item-img" src="img/18.jpg" alt="">
-                        <span class="movie-list-item-title">Her</span>
-                        <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-                            hic fugit similique accusantium.</p>
-                        <button class="movie-list-item-button">Watch</button>
-                    </div>
-                    <div class="movie-list-item">
-                        <img class="movie-list-item-img" src="img/19.jpg" alt="">
-                        <span class="movie-list-item-title">Her</span>
-                        <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-                            hic fugit similique accusantium.</p>
-                        <button class="movie-list-item-button">Watch</button>
-                    </div>
-                    <div class="movie-list-item">
-                        <img class="movie-list-item-img" src="img/7.jpg" alt="">
-                        <span class="movie-list-item-title">Her</span>
-                        <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-                            hic fugit similique accusantium.</p>
-                        <button class="movie-list-item-button">Watch</button>
-                    </div>
-                    <div class="movie-list-item">
-                        <img class="movie-list-item-img" src="img/9.jpg" alt="">
-                        <span class="movie-list-item-title">Her</span>
-                        <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-                            hic fugit similique accusantium.</p>
-                        <button class="movie-list-item-button">Watch</button>
-                    </div>
-                    <div class="movie-list-item">
-                        <img class="movie-list-item-img" src="img/8.jpg" alt="">
-                        <span class="movie-list-item-title">Her</span>
-                        <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-                            hic fugit similique accusantium.</p>
-                        <button class="movie-list-item-button">Watch</button>
-                    </div>
-                    <div class="movie-list-item">
-                        <img class="movie-list-item-img" src="img/5.jpg" alt="">
-                        <span class="movie-list-item-title">Her</span>
-                        <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-                            hic fugit similique accusantium.</p>
-                        <button class="movie-list-item-button">Watch</button>
-                    </div>
-                </div>
-                <i class="fas fa-chevron-right arrow"></i>
-            </div>
-        </div>
-    </div>
     </div>
     <script src="app.js"></script>
 </body>

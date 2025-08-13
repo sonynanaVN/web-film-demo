@@ -55,3 +55,53 @@ document.querySelector(".fa-bookmark").addEventListener("click", (e) => {
 document.querySelector(".fa-home").addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: 'smooth', transition: 'all 0.3s ease' });
 });
+// Chuyển đổi video + nội dung
+const video = document.getElementById('myVideo');
+const source = document.getElementById('videoSource');
+const thumbnails = document.querySelectorAll('.thumbnail-list img');
+
+// Các phần tử nội dung phim
+const titleEl = document.getElementById('movieTitle');
+const imdbEl = document.getElementById('movieIMDB');
+const qualityEl = document.getElementById('movieQuality');
+const ageEl = document.getElementById('movieAge');
+const yearEl = document.getElementById('movieYear');
+const durationEl = document.getElementById('movieDuration');
+const genresEl = document.getElementById('movieGenres');
+const descEl = document.getElementById('movieDesc');
+
+thumbnails.forEach(thumb => {
+    thumb.addEventListener('click', () => {
+        // Fade-out video
+        video.style.opacity = 0;
+
+        setTimeout(() => {
+            // Đổi video
+            source.src = thumb.getAttribute('data-src');
+            video.load();
+            video.play();
+
+            // Đổi nội dung
+            titleEl.textContent = thumb.dataset.title;
+            imdbEl.textContent = thumb.dataset.imdb;
+            qualityEl.textContent = thumb.dataset.quality;
+            ageEl.textContent = thumb.dataset.age;
+            yearEl.textContent = thumb.dataset.year;
+            durationEl.textContent = thumb.dataset.duration;
+
+            // Tách thể loại bằng dấu phẩy
+            genresEl.innerHTML = '';
+            thumb.dataset.genres.split(',').forEach(g => {
+                const span = document.createElement('span');
+                span.textContent = g.trim();
+                genresEl.appendChild(span);
+            });
+
+            descEl.textContent = thumb.dataset.desc;
+
+            // Fade-in video
+            video.style.opacity = 1;
+        }, 500);
+    });
+});
+

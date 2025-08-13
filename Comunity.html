@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Sen:wght@400;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <title>Movie Design</title>
+
+  <style>
+    /* ==== CSS phần cộng đồng phim ==== */
+
+    .community-container {
+      position: fixed;
+      top: 60px;
+      left: 60px;
+      width: calc(100% - 60px);
+      height: calc(100vh - 60px);
+      background: #121212;
+      color: #eee;
+      padding: 20px;
+      overflow: hidden;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.6);
+      z-index: 100;
+      display: none;
+      /* Ẩn mặc định */
+      flex-direction: row;
+      gap: 20px;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .movies-list {
+      width: 40%;
+      overflow-y: auto;
+      padding-right: 10px;
+      border-right: 1px solid #444;
+    }
+
+    /* -- Thêm hiệu ứng trồi nhẹ khi hover và khi được chọn cho cả item phim -- */
+    .movie-item {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 15px;
+      cursor: pointer;
+      padding: 5px;
+      border-radius: 6px;
+      transition: background-color 0.2s, transform 0.3s ease;
+      color: #eee;
+      will-change: transform;
+    }
+
+    .movie-item:hover {
+      background-color: #333;
+      transform: translateY(-6px);
+      box-shadow: 0 8px 16px rgba(148, 225, 248, 0.315);
+    }
+
+    .movie-item.selected {
+      background-color: #2a3d66;
+      transform: translateY(-6px);
+    }
+
+    /* Xóa viền vàng, chỉ bóng nhẹ */
+    .movie-poster-small {
+      width: 80px;
+      height: 110px;
+      border-radius: 6px;
+      object-fit: cover;
+      flex-shrink: 0;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      border: 2px solid transparent !important;
+    }
+
+    .movie-poster-small:hover {
+      transform: scale(1.1);
+      box-shadow: 0 5px 15px rgba(209, 245, 3, 0.6);
+      border-color: transparent !important;
+      position: relative;
+      z-index: 10;
+    }
+
+    .movie-info {
+      flex-grow: 1;
+    }
+
+    .movie-title-small {
+      font-weight: 700;
+      font-size: 18px;
+      margin-bottom: 6px;
+      color: #eee;
+    }
+
+    .movie-summary {
+      font-size: 13px;
+      color: #bbb;
+      margin-bottom: 6px;
+      font-style: italic;
+      line-height: 1.2;
+    }
+
+    .movie-rating {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: #ccc;
+    }
+
+    .stars {
+      color: #f5a623;
+      display: flex;
+    }
+
+    .stars i {
+      margin-right: 2px;
+    }
+
+    .avg-score {
+      font-weight: 600;
+    }
+
+    .movie-detail {
+      width: 60%;
+      height: 100%;
+      overflow-y: auto;
+      padding-left: 15px;
+      display: flex;
+      flex-direction: column;
+      background: #1e1e1e;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(255 255 255 / 0.1);
+      color: #eee;
+      transition: transform 0.3s ease;
+      will-change: transform;
+    }
+
+    .movie-detail.show-effect {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px rgba(224, 223, 222, 0.6);
+    }
+
+    .movie-detail-header {
+      display: flex;
+      gap: 15px;
+      align-items: flex-start;
+      padding: 15px;
+      border-bottom: 1px solid #444;
+    }
+
+    .movie-detail-poster {
+      width: 150px;
+      height: 210px;
+      border-radius: 8px;
+      object-fit: cover;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+    }
+
+    .movie-detail-info {
+      flex-grow: 1;
+    }
+
+    .movie-detail-title {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #eee;
+    }
+
+    .movie-detail-rating {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 16px;
+      margin-bottom: 10px;
+      color: #ccc;
+    }
+
+    .comments-section {
+      flex-grow: 1;
+      padding: 15px;
+      overflow-y: auto;
+      border-top: 1px solid #444;
+      font-size: 14px;
+      color: #eee;
+    }
+
+    .comment {
+      margin-bottom: 12px;
+      border-bottom: 1px solid #333;
+      padding-bottom: 8px;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .comment.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .comment-user {
+      font-weight: 600;
+      color: #f5a623;
+    }
+
+    .comment-stars {
+      color: #f5a623;
+      font-size: 16px;
+      display: inline-block;
+    }
+
+    .comment-text {
+      line-height: 1.3;
+      margin-left: 4px;
+    }
+
+    .comment-actions {
+      margin-top: 4px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .comment-actions button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #bbb;
+      font-size: 16px;
+      transition: color 0.2s ease;
+    }
+
+    .comment-actions button:hover {
+      color: #f5a623;
+    }
+
+    .comment-input {
+      border-top: 1px solid #444;
+      padding: 15px;
+      background: #222;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 14px;
+      color: #eee;
+      border-radius: 0 0 8px 8px;
+    }
+
+    .comment-input textarea,
+    .comment-input input[type="text"] {
+      width: 100%;
+      padding: 8px;
+      font-family: inherit;
+      border-radius: 5px;
+      border: 1px solid #555;
+      background: #121212;
+      color: #eee;
+      resize: vertical;
+    }
+
+    .stars-input {
+      display: flex;
+      gap: 5px;
+    }
+
+    .stars-input .star {
+      font-size: 28px;
+      color: #555;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .stars-input .star:hover,
+    .stars-input .star.active {
+      color: #f5a623;
+    }
+
+    .comment-input button {
+      align-self: flex-end;
+      padding: 8px 18px;
+      background: #007bff;
+      border: none;
+      color: white;
+      border-radius: 5px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .comment-input button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="navbar">
+    <div class="navbar-container">
+      <div class="logo-container">
+        <h1 class="logo">SonaFilm</h1>
+      </div>
+      <div class="menu-container">
+        <ul class="menu-list">
+          <li class="menu-list-item-search">
+            <div class="search-box">
+              <i class="fas fa-search"></i>
+              <input type="text" placeholder="Tìm kiếm phim, diễn viên" id="menuSearchInput" />
+            </div>
+          </li>
+          <li class="menu-list-item active">Home</li>
+          <li class="menu-list-item">Movies</li>
+          <li class="menu-list-item">Series</li>
+          <li class="menu-list-item">Popular</li>
+          <li class="menu-list-item">Trends</li>
+        </ul>
+      </div>
+      <div class="profile-container">
+        <img class="profile-picture" src="img/profile.jpg" alt="" />
+        <div class="profile-text-container">
+          <span class="profile-text">Profile</span>
+          <i class="fas fa-caret-down"></i>
+        </div>
+        <div class="toggle">
+          <i class="fas fa-moon toggle-icon"></i>
+          <i class="fas fa-sun toggle-icon"></i>
+          <div class="toggle-ball"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="sidebar">
+    <a href="home.html" title="Trang chủ"><i class="left-menu-icon fas fa-home"></i></a>
+    <a href="Comunity.html" title="Cộng đồng người dùng-đánh giá film"><i class="left-menu-icon fas fa-users"></i></a>
+    <a href="vip-payment.html" title="Thanh Toán"><i class="left-menu-icon fas fa-bookmark"></i></a>
+    <a href="show-time.html" title="Xem Rạp"><i class="left-menu-icon fas fa-tv"></i></a>
+    <a href="ranking.html" title="Bảng xếp hạng"><i class="left-menu-icon fas fa-hourglass-start"></i></a>
+    <a href="cart.html" title="Giỏ hàng"><i class="left-menu-icon fas fa-shopping-cart"></i></a>
+  </div>
+
+  <!-- Cộng đồng phim container -->
+  <div id="community" class="community-container">
+    <!-- Danh sách phim -->
+    <div class="movies-list" id="movies-list"></div>
+
+    <!-- Chi tiết phim và bình luận -->
+    <div class="movie-detail" id="movie-detail" style="display: none;">
+      <div class="movie-detail-header">
+        <img src="/img/18.jpg" alt="Poster" class="movie-detail-poster" id="detail-poster" />
+        <div class="movie-detail-info">
+          <h2 class="movie-detail-title" id="detail-title"></h2>
+          <div class="movie-detail-rating" id="detail-rating"></div>
+        </div>
+      </div>
+
+      <div class="comments-section" id="comments-section"></div>
+
+      <div class="comment-input">
+        <input type="text" id="comment-user" placeholder="Nhập tên của bạn..." maxlength="30" autocomplete="off" />
+        <textarea id="comment-text" placeholder="Viết bình luận của bạn..." maxlength="300"></textarea>
+        <div class="stars-input" id="stars-input"></div>
+        <button id="send-comment">Gửi bình luận</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const communityIcon = document.querySelector(
+      ".left-menu-icon.fas.fa-users"
+    );
+    const communityContainer = document.getElementById("community");
+    const moviesListEl = document.getElementById("movies-list");
+    const movieDetailEl = document.getElementById("movie-detail");
+    const detailPoster = document.getElementById("detail-poster");
+    const detailTitle = document.getElementById("detail-title");
+    const detailRating = document.getElementById("detail-rating");
+    const commentsSection = document.getElementById("comments-section");
+    const commentText = document.getElementById("comment-text");
+    const commentUser = document.getElementById("comment-user");
+    const starsInput = document.getElementById("stars-input");
+    const sendCommentBtn = document.getElementById("send-comment");
+
+    const moviesDataKey = "sonaFilmMoviesData";
+
+    // Thêm mô tả tóm tắt cho từng phim
+    const movieSummaries = {
+      1: "Tù nhân kiên cường vượt ngục bất thành.",
+      2: "Phim kể về câu chuyện của hai người lính trẻ người Anh trong Thế chiến thứ nhất.",
+      3: "Người dơi chiến đấu trong bóng tối Gotham.",
+      4: "Thần lực luôn tồn tại trong vũ trụ.",
+      5: "Phim tiếp tục khai thác sự trưởng thành, tình bạn và những khó khăn trong việc làm anh hùng của các thanh thiếu niên bình thường.",
+      6: "Mê cung giấc mơ và thực tại đan xen.",
+    };
+
+    let moviesData = [
+      {
+        id: 1,
+        title: "The Shawshank Redemption",
+        poster: "/img/14.jpg",
+        comments: [],
+      },
+      {
+        id: 2,
+        title: "1917",
+        poster: "/img/4.jpg",
+        comments: [],
+      },
+      {
+        id: 3,
+        title: "The Dark Knight",
+        poster: "/img/7.jpg",
+        comments: [],
+      },
+      {
+        id: 4,
+        title: "Star Wars: The Force Awakens",
+        poster: "/img/8.jpg",
+        comments: [],
+      },
+      {
+        id: 5,
+        title: "Kiss Ass 2",
+        poster: "/img/10.jpg",
+        comments: [],
+      },
+      {
+        id: 6,
+        title: "Inception",
+        poster: "/img/9.jpg",
+        comments: [],
+      },
+    ];
+
+    function loadDataFromStorage() {
+      const data = localStorage.getItem(moviesDataKey);
+      if (data) {
+        moviesData = JSON.parse(data);
+      }
+    }
+
+    function saveDataToStorage() {
+      localStorage.setItem(moviesDataKey, JSON.stringify(moviesData));
+    }
+
+    let currentMovie = null;
+    let selectedRating = 0;
+    let editingCommentIndex = null;
+
+    function getAverageScore(comments) {
+      if (comments.length === 0) return 0;
+      const sum = comments.reduce((acc, c) => acc + c.rating, 0);
+      return (sum / comments.length).toFixed(1);
+    }
+
+    function createStars(rating) {
+      const container = document.createElement("div");
+      container.classList.add("stars");
+      for (let i = 1; i <= 5; i++) {
+        const star = document.createElement("i");
+        star.classList.add("fas", "fa-star");
+        star.style.marginRight = "2px";
+        star.style.color = i <= rating ? "#f5a623" : "#555";
+        container.appendChild(star);
+      }
+      return container;
+    }
+
+    function renderMoviesList() {
+      moviesListEl.innerHTML = "";
+      moviesData.forEach((movie) => {
+        const item = document.createElement("div");
+        item.classList.add("movie-item");
+        if (currentMovie && currentMovie.id === movie.id)
+          item.classList.add("selected");
+
+        const poster = document.createElement("img");
+        poster.src = movie.poster;
+        poster.alt = movie.title;
+        poster.classList.add("movie-poster-small");
+        item.appendChild(poster);
+
+        const info = document.createElement("div");
+        info.classList.add("movie-info");
+
+        const title = document.createElement("div");
+        title.classList.add("movie-title-small");
+        title.textContent = movie.title;
+        info.appendChild(title);
+
+        const summary = document.createElement("div");
+        summary.classList.add("movie-summary");
+        summary.textContent = movieSummaries[movie.id] || "";
+        info.appendChild(summary);
+
+        const ratingDiv = document.createElement("div");
+        ratingDiv.classList.add("movie-rating");
+        ratingDiv.appendChild(createStars(Math.round(getAverageScore(movie.comments))));
+        const scoreText = document.createElement("span");
+        scoreText.classList.add("avg-score");
+        scoreText.textContent = `Điểm: ${getAverageScore(movie.comments)} (${movie.comments.length} đánh giá)`;
+        ratingDiv.appendChild(scoreText);
+
+        info.appendChild(ratingDiv);
+        item.appendChild(info);
+
+        item.addEventListener("click", () => {
+          currentMovie = movie;
+          selectedRating = 0;
+          editingCommentIndex = null;
+          commentText.value = "";
+          commentUser.value = "";
+          renderMoviesList();
+          renderMovieDetail();
+        });
+
+        moviesListEl.appendChild(item);
+      });
+    }
+
+    function renderMovieDetail() {
+      if (!currentMovie) {
+        movieDetailEl.style.display = "none";
+        movieDetailEl.classList.remove("show-effect");
+        return;
+      }
+      movieDetailEl.style.display = "flex";
+      movieDetailEl.classList.add("show-effect");
+
+      detailPoster.src = currentMovie.poster;
+      detailPoster.alt = currentMovie.title;
+      detailTitle.textContent = currentMovie.title;
+
+      detailRating.innerHTML = "";
+      detailRating.appendChild(createStars(Math.round(getAverageScore(currentMovie.comments))));
+      const avgScoreText = document.createElement("span");
+      avgScoreText.style.marginLeft = "10px";
+      avgScoreText.style.color = "#f5a623";
+      avgScoreText.textContent = `Điểm trung bình: ${getAverageScore(currentMovie.comments)} (${currentMovie.comments.length} đánh giá)`;
+      detailRating.appendChild(avgScoreText);
+
+      renderComments();
+      renderStarsInput();
+    }
+
+    function renderComments() {
+      commentsSection.innerHTML = "";
+      if (!currentMovie.comments.length) {
+        commentsSection.textContent = "Chưa có bình luận nào.";
+        return;
+      }
+
+      currentMovie.comments.forEach((comment, index) => {
+        const commentEl = document.createElement("div");
+        commentEl.classList.add("comment");
+        commentEl.classList.add("visible");
+
+        const userEl = document.createElement("div");
+        userEl.classList.add("comment-user");
+        userEl.textContent = comment.user;
+        commentEl.appendChild(userEl);
+
+        const starsEl = document.createElement("div");
+        starsEl.classList.add("comment-stars");
+        for (let i = 1; i <= 5; i++) {
+          const star = document.createElement("i");
+          star.classList.add("fas", "fa-star");
+          star.style.color = i <= comment.rating ? "#f5a623" : "#555";
+          starsEl.appendChild(star);
+        }
+        commentEl.appendChild(starsEl);
+
+        const textEl = document.createElement("div");
+        textEl.classList.add("comment-text");
+        textEl.textContent = comment.text;
+        commentEl.appendChild(textEl);
+
+        const actionsEl = document.createElement("div");
+        actionsEl.classList.add("comment-actions");
+
+        // nút sửa
+        const editBtn = document.createElement("button");
+        editBtn.title = "Sửa bình luận";
+        editBtn.innerHTML = '<i class="fas fa-edit"></i>';
+        editBtn.addEventListener("click", () => {
+          editingCommentIndex = index;
+          commentUser.value = comment.user;
+          commentText.value = comment.text;
+          selectedRating = comment.rating;
+          updateStarsInput();
+        });
+        actionsEl.appendChild(editBtn);
+
+        // nút xóa
+        const deleteBtn = document.createElement("button");
+        deleteBtn.title = "Xóa bình luận";
+        deleteBtn.innerHTML = '<i class="fas fa-trash-alt"></i>';
+        deleteBtn.addEventListener("click", () => {
+          if (confirm("Bạn có chắc muốn xóa bình luận này?")) {
+            currentMovie.comments.splice(index, 1);
+            saveDataToStorage();
+            renderMoviesList();
+            renderMovieDetail();
+          }
+        });
+        actionsEl.appendChild(deleteBtn);
+
+        commentEl.appendChild(actionsEl);
+
+        commentsSection.appendChild(commentEl);
+      });
+    }
+
+    function renderStarsInput() {
+      starsInput.innerHTML = "";
+      for (let i = 1; i <= 5; i++) {
+        const star = document.createElement("i");
+        star.classList.add("fas", "fa-star", "star");
+        star.dataset.value = i;
+        star.style.color = i <= selectedRating ? "#f5a623" : "#555";
+        star.addEventListener("click", () => {
+          selectedRating = i;
+          updateStarsInput();
+        });
+        starsInput.appendChild(star);
+      }
+    }
+
+    function updateStarsInput() {
+      const stars = starsInput.querySelectorAll(".star");
+      stars.forEach((star) => {
+        const val = parseInt(star.dataset.value);
+        star.style.color = val <= selectedRating ? "#f5a623" : "#555";
+      });
+    }
+
+    sendCommentBtn.addEventListener("click", () => {
+      const user = commentUser.value.trim();
+      const text = commentText.value.trim();
+
+      if (!user) {
+        alert("Vui lòng nhập tên của bạn.");
+        commentUser.focus();
+        return;
+      }
+
+      if (!text) {
+        alert("Vui lòng nhập bình luận.");
+        commentText.focus();
+        return;
+      }
+
+      if (selectedRating === 0) {
+        alert("Vui lòng chọn số sao đánh giá.");
+        return;
+      }
+
+      if (!currentMovie) {
+        alert("Vui lòng chọn phim để bình luận.");
+        return;
+      }
+
+      if (editingCommentIndex !== null) {
+        // sửa
+        currentMovie.comments[editingCommentIndex] = {
+          user,
+          text,
+          rating: selectedRating,
+        };
+        editingCommentIndex = null;
+      } else {
+        // thêm mới
+        currentMovie.comments.push({
+          user,
+          text,
+          rating: selectedRating,
+        });
+      }
+
+      commentUser.value = "";
+      commentText.value = "";
+      selectedRating = 0;
+      updateStarsInput();
+
+      saveDataToStorage();
+      renderMoviesList();
+      renderMovieDetail();
+    });
+
+    communityIcon.addEventListener("click", () => {
+      if (communityContainer.style.display === "flex") {
+        communityContainer.style.display = "none";
+      } else {
+        communityContainer.style.display = "flex";
+        if (!currentMovie) {
+          currentMovie = moviesData[0];
+        }
+        renderMoviesList();
+        renderMovieDetail();
+      }
+    });
+
+    // Load dữ liệu khi mở trang
+    // Load dữ liệu khi mở trang
+loadDataFromStorage();
+
+// Luôn hiển thị community khi vào trang
+communityContainer.style.display = "flex";
+
+// Nếu chưa có phim nào được chọn thì chọn phim đầu tiên
+if (!currentMovie) {
+  currentMovie = moviesData[0];
+}
+
+// Render luôn danh sách và chi tiết
+renderMoviesList();
+renderMovieDetail();
+
+  </script>
+</body>
+
+</html>

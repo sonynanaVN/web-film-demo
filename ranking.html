@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bảng Xếp Hạng Phim - SonaFilm</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #151515;
+            color: white;
+            display: flex;
+        }
+
+        /* ===== SIDEBAR ===== */
+        .sidebar {
+            width: 70px;
+            background: black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 20px;
+            position: fixed;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        .sidebar i {
+            font-size: 20px;
+            margin: 20px 0;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .sidebar i:hover {
+            color: aqua;
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            height: 50px;
+            background: #000;
+            position: fixed;
+            top: 0;
+            left: 70px;
+            right: 0;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 20px;
+            color: aqua;
+            font-weight: bold;
+            flex: 1;
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            background: #222;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .search-box input {
+            background: transparent;
+            border: none;
+            outline: none;
+            color: white;
+            margin-left: 5px;
+        }
+
+        /* ===== CONTENT ===== */
+        .content {
+            margin-left: 70px;
+            margin-top: 50px;
+            padding: 20px;
+            flex: 1;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #222;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background: aqua;
+            color: black;
+        }
+
+        tr:nth-child(even) {
+            background: #333;
+        }
+
+        tr:hover {
+            background: #444;
+        }
+
+        .rank {
+            font-weight: bold;
+            color: gold;
+        }
+
+        .poster {
+            width: 50px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== SIDEBAR ===== -->
+    <div class="sidebar">
+        <a href="home.html" title="Trang chủ"><i class="left-menu-icon fas fa-home"></i></a>
+        <a href="Comunity.html" title="Cộng đồng người dùng-đánh giá film"><i class="left-menu-icon fas fa-users"></i></a>
+        <a href="vip-payment.html" title="Thanh Toán"><i class="left-menu-icon fas fa-bookmark"></i></a>
+        <a href="show-time.html" title="Xem Rạp"><i class="left-menu-icon fas fa-tv"></i></a>
+        <a href="ranking.html" title="Bảng xếp hạng"><i class="left-menu-icon fas fa-hourglass-start"></i></a>
+        <a href="cart.html" title="Giỏ hàng"><i class="left-menu-icon fas fa-shopping-cart"></i></a>
+    </div>
+
+    <!-- ===== NAVBAR ===== -->
+    <div class="navbar">
+        <div class="logo">SonaFilm</div>
+        <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Tìm kiếm phim...">
+        </div>
+    </div>
+
+    <!-- ===== CONTENT ===== -->
+    <div class="content">
+        <h2>🎬 Bảng Xếp Hạng Phim Hot Nhất</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Hạng</th>
+                    <th>Poster</th>
+                    <th>Tên Phim</th>
+                    <th>Điểm IMDb</th>
+                    <th>Năm</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="rank">1</td>
+                    <td><img src="https://image.tmdb.org/t/p/w200/q719jXXEzOoYaps6babgKnONONX.jpg" class="poster"></td>
+                    <td>Avengers: Endgame</td>
+                    <td>8.4</td>
+                    <td>2019</td>
+                </tr>
+                <tr>
+                    <td class="rank">2</td>
+                    <td><img src="https://image.tmdb.org/t/p/w200/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg" class="poster"></td>
+                    <td>Spider-Man: No Way Home</td>
+                    <td>8.3</td>
+                    <td>2021</td>
+                </tr>
+                <tr>
+                    <td class="rank">3</td>
+                    <td><img src="https://image.tmdb.org/t/p/w200/74xTEgt7R36Fpooo50r9T25onhq.jpg" class="poster"></td>
+                    <td>The Batman</td>
+                    <td>8.2</td>
+                    <td>2022</td>
+                </tr>
+                <tr>
+                    <td class="rank">4</td>
+                    <td><img src="https://image.tmdb.org/t/p/w200/wRnbWt44nKjsFPrqSmwYki5vZtF.jpg" class="poster"></td>
+                    <td>Doctor Strange 2</td>
+                    <td>7.5</td>
+                    <td>2022</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+
+</html>

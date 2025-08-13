@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SonaFilm - Cửa hàng lưu niệm phim</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #151515;
+            color: white;
+            display: flex;
+        }
+        /* Sidebar */
+        .sidebar {
+            width: 60px;
+            background-color: black;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding-top: 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+        }
+        .sidebar i {
+            font-size: 20px;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .sidebar i:hover {
+            color: aqua;
+            transform: scale(1.2);
+        }
+        /* Navbar */
+        .navbar {
+            width: calc(100% - 60px);
+            height: 50px;
+            background-color: black;
+            position: fixed;
+            top: 0;
+            left: 60px;
+            z-index: 99999;
+        }
+        .navbar-container {
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            height: 100%;
+            color: white;
+        }
+        .logo { font-size: 24px; color: aqua; }
+        /* Content */
+        .content {
+            margin-top: 60px;
+            margin-left: 80px;
+            padding: 20px;
+            flex: 1;
+            width: 100%;
+        }
+        .product-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .product-card {
+            background: #222;
+            border-radius: 10px;
+            overflow: hidden;
+            text-align: center;
+            padding-bottom: 10px;
+            transition: transform 0.2s;
+        }
+        .product-card:hover {
+            transform: scale(1.05);
+        }
+        .product-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        .product-card h3 {
+            margin: 10px 0;
+        }
+        .product-card p {
+            color: aqua;
+            font-weight: bold;
+        }
+        .buy-btn {
+            padding: 8px 15px;
+            background: aqua;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .buy-btn:hover {
+            background: #00cccc;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <a href="home.html" title="Trang chủ"><i class="left-menu-icon fas fa-home"></i></a>
+        <a href="Comunity.html" title="Cộng đồng"><i class="left-menu-icon fas fa-users"></i></a>
+        <a href="vip-payment.html" title="Thanh Toán"><i class="left-menu-icon fas fa-bookmark"></i></a>
+        <a href="show-time.html" title="Xem Rạp"><i class="left-menu-icon fas fa-tv"></i></a>
+        <a href="ranking.html" title="Bảng xếp hạng"><i class="left-menu-icon fas fa-hourglass-start"></i></a>
+        <a href="cart.html" title="Giỏ hàng"><i class="left-menu-icon fas fa-shopping-cart"></i></a>
+    </div>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="navbar-container">
+            <div class="logo-container"><h1 class="logo">SonaFilm</h1></div>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+        <h2>🎬 Cửa hàng lưu niệm phim</h2>
+        <div class="product-list" id="productList"></div>
+    </div>
+
+<script>
+    const products = [
+        { name: "Mô hình Iron Man", price: 450000, img: "https://i.imgur.com/z7qZQ3K.jpeg" },
+        { name: "Áo thun Avengers", price: 250000, img: "https://i.imgur.com/5UuD8qW.jpeg" },
+        { name: "Cốc Spider-Man", price: 120000, img: "https://i.imgur.com/hmXJQMI.jpeg" },
+        { name: "Poster The Batman", price: 80000, img: "https://i.imgur.com/ZVdP9S2.jpeg" },
+        { name: "Móc khóa Doctor Strange", price: 50000, img: "https://i.imgur.com/VRQx5Z2.jpeg" }
+    ];
+
+    const productList = document.getElementById("productList");
+
+    function renderProducts() {
+        products.forEach((p, index) => {
+            const card = document.createElement("div");
+            card.classList.add("product-card");
+            card.innerHTML = `
+                <img src="${p.img}" alt="${p.name}">
+                <h3>${p.name}</h3>
+                <p>${p.price.toLocaleString()}₫</p>
+                <button class="buy-btn" onclick="addToCart(${index})">Thêm vào giỏ</button>
+            `;
+            productList.appendChild(card);
+        });
+    }
+
+    function addToCart(index) {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        cart.push(products[index]);
+        localStorage.setItem("cart", JSON.stringify(cart));
+        alert("Đã thêm vào giỏ: " + products[index].name);
+    }
+
+    renderProducts();
+</script>
+</body>
+</html>
