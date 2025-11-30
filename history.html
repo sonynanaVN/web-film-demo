@@ -1,0 +1,13 @@
+function saveHistory(movie) {
+  let history = JSON.parse(localStorage.getItem("history")) || [];
+  const index = history.findIndex(item => item.id === movie.id);
+
+  if (index >= 0) {
+    history[index] = movie; // cập nhật
+  } else {
+    history.unshift(movie); // thêm mới
+  }
+
+  if (history.length > 10) history.pop();
+  localStorage.setItem("history", JSON.stringify(history));
+}
